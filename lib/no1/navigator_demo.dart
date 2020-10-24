@@ -1,5 +1,7 @@
+import 'package:cloud_flutter_app/utils/toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 //路由相关-demo
 class NavigatorDemo extends StatefulWidget {
@@ -9,7 +11,7 @@ class NavigatorDemo extends StatefulWidget {
 
 // ignore: camel_case_types
 class _naivgateDemo extends State {
-  var centerTitle = "准备接收返回的数据";
+  var centerTitle = "This is OnePage";
 
   _updateCenterTitle(String title) {
     setState(() {
@@ -37,7 +39,11 @@ class _naivgateDemo extends State {
       );
 }
 
-class TwoPage extends StatelessWidget {
+class TwoPage extends StatefulWidget {
+  _TwoPage createState() => _TwoPage();
+}
+
+class _TwoPage extends State {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
@@ -46,12 +52,52 @@ class TwoPage extends StatelessWidget {
             icon: Icon(Icons.arrow_left),
             onPressed: () {
               //返回数据回去
-              Navigator.of(context).pop("我是返回的数据");
+              // Navigator.of(context).pop("我是返回的数据");
+              //是否可以返回回去
+              Navigator.maybePop(context, "ceshi1");
+              // print(isCanPop);
             },
           ),
         ),
         body: Center(
-          child: Text("This is Intent Test"),
+          child: Column(
+            children: <Widget>[
+              getButton("maybePop", () {
+                Navigator.maybePop(context, "test");
+              }),
+              getButton("canPop", () {
+                bool isCanPop = Navigator.canPop(context);
+                showToast("是否可关闭$isCanPop");
+              }),
+              getButton("pushNamed", () {
+                //导航到指定页面
+                showToast("测试->xx");
+                Navigator.pushNamed(context, "xxx");
+              }),
+              getButton("pop", () {
+                Navigator.maybePop(context, "test");
+              }),
+              getButton("removeRoute", () {
+                showToast("清除指定路由，同时释放资源");
+              }),
+              getButton("removeRouteBelow", () {
+                showToast("清除指定路由下的路由，同时释放其资源");
+              }),
+              getButton("replace", () {
+                showToast("将Navigator中指定的路由替换为新的路由");
+              }),
+              getButton("replaceRouteBelow", () {
+                showToast("将Navigator中指定的路由下的路由替换为新的路由");
+              })
+            ],
+          ),
         ),
       );
+
+  getButton(String title, VoidCallback callback) {
+    return RaisedButton(
+      onPressed: callback,
+      child: Text(title),
+    );
+  }
 }
