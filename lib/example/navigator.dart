@@ -1,9 +1,8 @@
-import 'package:cloud_flutter_app/utils/toast.dart';
+import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
-//路由相关-demo
+// TODO: 2020/10/26 路由导航相关-demo
 class NavigatorDemo extends StatefulWidget {
   @override
   _naivgateDemo createState() => _naivgateDemo();
@@ -62,42 +61,35 @@ class _TwoPage extends State {
         body: Center(
           child: Column(
             children: <Widget>[
-              getButton("maybePop", () {
+              showButton("maybePop", () {
                 Navigator.maybePop(context, "test");
               }),
-              getButton("canPop", () {
+              showButton("canPop", () {
                 bool isCanPop = Navigator.canPop(context);
                 showToast("是否可关闭$isCanPop");
               }),
-              getButton("pushNamed", () {
+              showButton("pushNamed", () {
                 //导航到指定页面
                 showToast("测试->xx");
                 Navigator.pushNamed(context, "xxx");
               }),
-              getButton("pop", () {
+              showButton("pop", () {
                 Navigator.maybePop(context, "test");
               }),
-              getButton("removeRoute", () {
+              showButton("removeRoute", () {
                 showToast("清除指定路由，同时释放资源");
               }),
-              getButton("removeRouteBelow", () {
+              showButton("removeRouteBelow", () {
                 showToast("清除指定路由下的路由，同时释放其资源");
               }),
-              getButton("replace", () {
+              showButton("replace", () {
                 showToast("将Navigator中指定的路由替换为新的路由");
               }),
-              getButton("replaceRouteBelow", () {
+              showButton("replaceRouteBelow", () {
                 showToast("将Navigator中指定的路由下的路由替换为新的路由");
               })
             ],
           ),
         ),
       );
-
-  getButton(String title, VoidCallback callback) {
-    return RaisedButton(
-      onPressed: callback,
-      child: Text(title),
-    );
-  }
 }
