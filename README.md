@@ -13,6 +13,7 @@
 - [路由导航-示例](https://github.com/Petterpx/Flutter-Example-Demo/blob/master/lib/example/navigator.dart)
 - [Animation动画-示例](https://github.com/Petterpx/Flutter-Example-Demo/blob/master/lib/example/animate_scale.dart)
 - [资源管理-示例](https://github.com/Petterpx/Flutter-Example-Demo/blob/master/lib/example/resource_manager.dart)
+- [异常处理-示例](https://github.com/Petterpx/Flutter-Example-Demo/blob/master/lib/example/error_collection.dart)
 
 
 

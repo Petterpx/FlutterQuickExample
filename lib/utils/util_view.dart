@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:simple_logger/simple_logger.dart';
 
 // TODO: 2020/10/26 一些便于使用的方法
 
@@ -20,3 +21,6 @@ showButton(String title, VoidCallback callback) => RaisedButton(
 loadAssetString(String key) async {
   return await rootBundle.loadString(key);
 }
+
+/// log */
+final logger = SimpleLogger();
