@@ -5,6 +5,7 @@ import 'example/animate_scale.dart';
 import 'example/my_count.dart';
 import 'example/navigator.dart';
 import 'example/resource_manager.dart';
+import 'example/widget_state.dart';
 
 
 void main() {
@@ -36,6 +37,7 @@ class _ListViewState extends State {
           buildItem(context, "动画", AnimateApp()),
           buildItem(context, "Tab导航", TabNavigator()),
           buildItem(context, "资源管理", ResourceManager()),
+          buildItem(context, "State生命周期", TestWidget()),
         ],
       ));
 

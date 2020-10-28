@@ -11,6 +11,8 @@ import 'package:simple_logger/simple_logger.dart';
 showToast(String message) => Fluttertoast.showToast(
     msg: message, gravity: ToastGravity.CENTER, fontSize: 16.0);
 
+
+
 //返回一个button
 showButton(String title, VoidCallback callback) => RaisedButton(
       onPressed: callback,
@@ -24,3 +26,7 @@ loadAssetString(String key) async {
 
 /// log */
 final logger = SimpleLogger();
+
+logInfo(String message) {
+  logger.log(Level.INFO, message);
+}
