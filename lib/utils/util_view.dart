@@ -11,13 +11,32 @@ import 'package:simple_logger/simple_logger.dart';
 showToast(String message) => Fluttertoast.showToast(
     msg: message, gravity: ToastGravity.CENTER, fontSize: 16.0);
 
-
-
 //返回一个button
 showButton(String title, VoidCallback callback) => RaisedButton(
       onPressed: callback,
       child: Text(title),
     );
+//
+class CustomButton extends StatefulWidget {
+  final String title;
+  final VoidCallback callback;
+
+  const CustomButton(this.title, this.callback);
+
+  @override
+  _CustomButtonState createState() => _CustomButtonState(title, callback);
+}
+
+class _CustomButtonState extends State {
+  final String title;
+  final VoidCallback callback;
+
+  _CustomButtonState(this.title, this.callback);
+
+  @override
+  Widget build(BuildContext context) =>
+      RaisedButton(onPressed: callback, child: Text(title));
+}
 
 //从Asset加载指定的key
 loadAssetString(String key) async {

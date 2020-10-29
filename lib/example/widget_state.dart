@@ -2,6 +2,9 @@ import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+///
+/// Widget示例
+/// */
 class TestWidget extends StatefulWidget {
   @override
   _TestWidgetState createState() => _TestWidgetState();
@@ -9,16 +12,17 @@ class TestWidget extends StatefulWidget {
 
 class _TestWidgetState extends State {
   var isShow = false;
-
+  GlobalKey<ChildState> childState = GlobalKey();
 
   @override
   void initState() {
     FlutterError.onError = (details) {
-      showToast("槽糕，发生同步异常了，具体如下(不过我猜你可能是child已移除，却要更换图片)：\n ${details.exceptionAsString()}");
+      logInfo("收集异常----${details.exceptionAsString()}");
+      showToast(
+          "槽糕，发生同步异常了，具体如下(不过我猜你可能是child已移除，却更换图片 👻 )： ${details.exceptionAsString()}");
     };
   }
 
-  GlobalKey<ChildState> childState = GlobalKey();
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -28,17 +32,21 @@ class _TestWidgetState extends State {
         body: Center(
           child: Column(
             children: <Widget>[
-              showButton("显示child", () {
+              CustomButton("显示child", () {
+                logInfo("点击-> 显示child");
                 setState(() {
                   isShow = true;
                 });
               }),
-              showButton("移除child", () {
+              CustomButton("移除child", () {
+                logInfo("点击-> 移除child");
                 setState(() {
                   isShow = false;
                 });
               }),
-              showButton("改变child显示图片-> jenkins", () {
+              SizedBox(height: 8),
+              CustomButton("改变child显示图片-> jenkins", () {
+                logInfo("点击-> 改变child显示图片");
                 childState.currentState.updateName("images/jenkins.jpg");
               }),
               isShow ? Child(childState) : Text("已隐藏child")
@@ -48,6 +56,7 @@ class _TestWidgetState extends State {
       );
 }
 
+/// 需要动态显示的Child,示例state */
 class Child extends StatefulWidget {
   final Key key;
 
@@ -55,6 +64,10 @@ class Child extends StatefulWidget {
 
   @override
   ChildState createState() => ChildState();
+
+  static of(BuildContext context) {
+    return context.findAncestorStateOfType<ChildState>();
+  }
 }
 
 class ChildState extends State {
@@ -108,6 +121,42 @@ class ChildState extends State {
   }
 
   @override
-  Widget build(BuildContext context) =>
-      Image(width: 200, height: 200, image: AssetImage(image));
+  Widget build(BuildContext context) {
+    logInfo("build-----开始构建Widget");
+    return Image(width: 200, height: 200, image: AssetImage(image));
+  }
+}
+
+class FindAncestorScaffold extends StatefulWidget {
+  @override
+  FindAncestorScaffoldState createState() => FindAncestorScaffoldState();
+}
+
+class FindAncestorScaffoldState extends State {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text("子树中获取 state 对象"),
+        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              CustomButton("findAncestorStateOfType", () {
+                //查找父级最近的 Scaffold  对应的ScaffoldState对象。
+                ScaffoldState _state =
+                    context.findAncestorStateOfType<ScaffoldState>();
+                _state.showSnackBar(SnackBar(
+                  content: Text("使用 findAncestorStateOfType 获取state"),
+                ));
+              }),
+              CustomButton("of静态方法", () {
+                ScaffoldState _state = Scaffold.of(context);
+                _state.showSnackBar(SnackBar(
+                  content: Text("使用Scaffold.of(context)获取state"),
+                ));
+              })
+            ],
+          ),
+        ),
+      );
 }

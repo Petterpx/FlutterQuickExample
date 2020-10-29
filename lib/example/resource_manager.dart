@@ -19,11 +19,11 @@ class _ResourceManager extends State {
         body: Center(
           child: Column(
             children: <Widget>[
-              showButton("读取一个张图", () {
+              CustomButton("读取一个张图", () {
                 imageAssetKey.currentState.updateImage("images/icon.png");
               }),
               ImageWidget(imageAssetKey),
-              showButton("加载一段文本", () async {
+              CustomButton("加载一段文本", () async {
                 var textAsset = await rootBundle.loadString("data/test.json");
                 textAssetKey.currentState.updateTitle(textAsset);
               }),
