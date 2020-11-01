@@ -10,7 +10,7 @@ class TestWidget extends StatefulWidget {
   _TestWidgetState createState() => _TestWidgetState();
 }
 
-class _TestWidgetState extends State {
+class _TestWidgetState extends State<TestWidget> {
   var isShow = false;
   GlobalKey<ChildState> childState = GlobalKey();
 
