@@ -61,31 +61,31 @@ class _TwoPage extends State {
         body: Center(
           child: Column(
             children: <Widget>[
-              CustomButton("maybePop", () {
+              WidgetFastButton("maybePop", () {
                 Navigator.maybePop(context, "test");
               }),
-              CustomButton("canPop", () {
+              WidgetFastButton("canPop", () {
                 bool isCanPop = Navigator.canPop(context);
                 showToast("是否可关闭$isCanPop");
               }),
-              CustomButton("pushNamed", () {
+              WidgetFastButton("pushNamed", () {
                 //导航到指定页面
                 showToast("测试->xx");
                 Navigator.pushNamed(context, "xxx");
               }),
-              CustomButton("pop", () {
+              WidgetFastButton("pop", () {
                 Navigator.maybePop(context, "test");
               }),
-              CustomButton("removeRoute", () {
+              WidgetFastButton("removeRoute", () {
                 showToast("清除指定路由，同时释放资源");
               }),
-              CustomButton("removeRouteBelow", () {
+              WidgetFastButton("removeRouteBelow", () {
                 showToast("清除指定路由下的路由，同时释放其资源");
               }),
-              CustomButton("replace", () {
+              WidgetFastButton("replace", () {
                 showToast("将Navigator中指定的路由替换为新的路由");
               }),
-              CustomButton("replaceRouteBelow", () {
+              WidgetFastButton("replaceRouteBelow", () {
                 showToast("将Navigator中指定的路由下的路由替换为新的路由");
               })
             ],

@@ -16,22 +16,38 @@ showButton(String title, VoidCallback callback) => RaisedButton(
       onPressed: callback,
       child: Text(title),
     );
-//
-class CustomButton extends StatefulWidget {
+
+/// 显示 */
+showButtonToPush(BuildContext context, String title, Widget widget) =>
+    GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return widget;
+        }));
+      },
+      child: Container(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(title,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+      ),
+    );
+
+/// 快捷Button */
+class WidgetFastButton extends StatefulWidget {
   final String title;
   final VoidCallback callback;
 
-  const CustomButton(this.title, this.callback);
+  const WidgetFastButton(this.title, this.callback);
 
   @override
-  _CustomButtonState createState() => _CustomButtonState(title, callback);
+  _WidgetFastButtonState createState() => _WidgetFastButtonState(title, callback);
 }
 
-class _CustomButtonState extends State {
+class _WidgetFastButtonState extends State {
   final String title;
   final VoidCallback callback;
 
-  _CustomButtonState(this.title, this.callback);
+  _WidgetFastButtonState(this.title, this.callback);
 
   @override
   Widget build(BuildContext context) =>

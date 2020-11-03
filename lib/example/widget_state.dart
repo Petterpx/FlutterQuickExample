@@ -32,20 +32,20 @@ class _TestWidgetState extends State<TestWidget> {
         body: Center(
           child: Column(
             children: <Widget>[
-              CustomButton("显示child", () {
+              WidgetFastButton("显示child", () {
                 logInfo("点击-> 显示child");
                 setState(() {
                   isShow = true;
                 });
               }),
-              CustomButton("移除child", () {
+              WidgetFastButton("移除child", () {
                 logInfo("点击-> 移除child");
                 setState(() {
                   isShow = false;
                 });
               }),
               SizedBox(height: 8),
-              CustomButton("改变child显示图片-> jenkins", () {
+              WidgetFastButton("改变child显示图片-> jenkins", () {
                 logInfo("点击-> 改变child显示图片");
                 childState.currentState.updateName("images/jenkins.jpg");
               }),
@@ -141,7 +141,7 @@ class FindAncestorScaffoldState extends State {
         body: Center(
           child: Column(
             children: <Widget>[
-              CustomButton("findAncestorStateOfType", () {
+              WidgetFastButton("findAncestorStateOfType", () {
                 //查找父级最近的 Scaffold  对应的ScaffoldState对象。
                 ScaffoldState _state =
                     context.findAncestorStateOfType<ScaffoldState>();
@@ -149,7 +149,7 @@ class FindAncestorScaffoldState extends State {
                   content: Text("使用 findAncestorStateOfType 获取state"),
                 ));
               }),
-              CustomButton("of静态方法", () {
+              WidgetFastButton("of静态方法", () {
                 ScaffoldState _state = Scaffold.of(context);
                 _state.showSnackBar(SnackBar(
                   content: Text("使用Scaffold.of(context)获取state"),
