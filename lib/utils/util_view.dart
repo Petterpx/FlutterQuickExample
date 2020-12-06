@@ -7,11 +7,11 @@ import 'package:simple_logger/simple_logger.dart';
 
 // TODO: 2020/10/26 一些便于使用的方法
 
-//显示一个toast
+/// 显示一个Toast */
 showToast(String message) => Fluttertoast.showToast(
     msg: message, gravity: ToastGravity.CENTER, fontSize: 16.0);
 
-//返回一个button
+/// 显示一个button */
 showButton(String title, VoidCallback callback) => RaisedButton(
       onPressed: callback,
       child: Text(title),
@@ -40,7 +40,8 @@ class WidgetFastButton extends StatefulWidget {
   const WidgetFastButton(this.title, this.callback);
 
   @override
-  _WidgetFastButtonState createState() => _WidgetFastButtonState(title, callback);
+  _WidgetFastButtonState createState() =>
+      _WidgetFastButtonState(title, callback);
 }
 
 class _WidgetFastButtonState extends State {
