@@ -55,6 +55,32 @@ class _WidgetFastButtonState extends State {
       RaisedButton(onPressed: callback, child: Text(title));
 }
 
+/// 显示一个快捷ListWidget跳转 */
+showSampleStateFulWidget(BuildContext context, String title, Widget widget) =>
+    showButtonToPush(context, title, SampleStateFulWidget(widget, title));
+
+/// 快捷Widget */
+// ignore: must_be_immutable
+class SampleStateFulWidget extends StatefulWidget {
+  final Widget mWidget;
+  final String title;
+
+  SampleStateFulWidget(this.mWidget, this.title);
+
+  @override
+  _SampleStateFulWidgetState createState() => _SampleStateFulWidgetState();
+}
+
+class _SampleStateFulWidgetState extends State<SampleStateFulWidget> {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: widget.mWidget,
+      );
+}
+
 //从Asset加载指定的key
 loadAssetString(String key) async {
   return await rootBundle.loadString(key);

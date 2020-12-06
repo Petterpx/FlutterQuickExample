@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'actual/tab_navigator.dart';
 import 'example/animate_scale.dart';
+import 'example/basis_widget_list.dart';
 import 'example/my_count.dart';
 import 'example/navigator.dart';
 import 'example/resource_manager.dart';
@@ -39,7 +40,7 @@ class _ListViewState extends State {
           showButtonToPush(context, "资源管理", ResourceManager()),
           showButtonToPush(context, "State生命周期", TestWidget()),
           showButtonToPush(context, "状态管理", StatusManager()),
+          showButtonToPush(context, "常见Widget", BasisWidgetList()),
         ],
       ));
-
 }
