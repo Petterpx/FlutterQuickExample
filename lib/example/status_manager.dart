@@ -89,8 +89,8 @@ class _WidgetAtoBState extends State<WidgetAtoB> {
 }
 
 class WidgetB extends StatelessWidget {
-  WidgetB({Key key, this.active: false, @required this.onChanged})
-      : super(key: key);
+  WidgetB({this.active: false, required this.onChanged});
+
   final bool active;
   final ValueChanged<bool> onChanged;
 
@@ -147,8 +147,8 @@ class _ParentWidgetState extends State<ParentWidget> {
 
 /// 子Widget控制外部边框显示状态 */
 class WidgetC extends StatefulWidget {
-  WidgetC({Key key, this.active: false, @required this.onChanged})
-      : super(key: key);
+  WidgetC({this.active: false, required this.onChanged});
+
   final bool active;
   final Function onChanged;
 
@@ -159,6 +159,7 @@ class WidgetC extends StatefulWidget {
 class _WidgetCState extends State<WidgetC> {
   //控制框外部是否显示
   bool _isHighlight = false;
+
   //手指按下
   _handleTapDown(TapDownDetails details) {
     setState(() {
@@ -166,6 +167,7 @@ class _WidgetCState extends State<WidgetC> {
       _isHighlight = true;
     });
   }
+
   //手指放开
   _handleTapUp(TapUpDetails details) {
     setState(() {
@@ -173,16 +175,19 @@ class _WidgetCState extends State<WidgetC> {
       _isHighlight = false;
     });
   }
+
   //手指取消
   _handleTapCancel() {
     setState(() {
       _isHighlight = false;
     });
   }
+
   //控制父widget
   _handleTap() {
     widget.onChanged();
   }
+
   @override
   Widget build(BuildContext context) {
     // 在按下时添加红色边框，当抬起时，取消高亮
@@ -204,7 +209,7 @@ class _WidgetCState extends State<WidgetC> {
           color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _isHighlight
               ? new Border.all(
-                  color: Colors.red[700],
+                  color: Colors.red[700]!,
                   width: 10.0,
                 )
               : null,

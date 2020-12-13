@@ -31,7 +31,7 @@ class _naivgateDemo extends State {
                 MaterialPageRoute(builder: (context) {
               return TwoPage();
             }));
-            _updateCenterTitle(result);
+            _updateCenterTitle(result!);
           },
           child: Icon(Icons.arrow_right),
         ),

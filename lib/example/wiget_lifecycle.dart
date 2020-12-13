@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 ///
 /// Widget示例
 /// */
-class TestWidget extends StatefulWidget {
+class StateLifecycleWidget extends StatefulWidget {
   @override
-  _TestWidgetState createState() => _TestWidgetState();
+  _StateLifecycleWidgetState createState() => _StateLifecycleWidgetState();
 }
 
-class _TestWidgetState extends State<TestWidget> {
+class _StateLifecycleWidgetState extends State<StateLifecycleWidget> {
   var isShow = false;
   GlobalKey<ChildState> childState = GlobalKey();
 
@@ -23,6 +23,12 @@ class _TestWidgetState extends State<TestWidget> {
     };
   }
 
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    FlutterError.onError = null;
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -47,7 +53,7 @@ class _TestWidgetState extends State<TestWidget> {
               SizedBox(height: 8),
               WidgetFastButton("改变child显示图片-> jenkins", () {
                 logInfo("点击-> 改变child显示图片");
-                childState.currentState.updateName("images/jenkins.jpg");
+                childState.currentState?.updateName("images/jenkins.jpg");
               }),
               isShow ? Child(childState) : Text("已隐藏child")
             ],
@@ -144,7 +150,7 @@ class FindAncestorScaffoldState extends State {
               WidgetFastButton("findAncestorStateOfType", () {
                 //查找父级最近的 Scaffold  对应的ScaffoldState对象。
                 ScaffoldState _state =
-                    context.findAncestorStateOfType<ScaffoldState>();
+                    context.findAncestorStateOfType<ScaffoldState>()!;
                 _state.showSnackBar(SnackBar(
                   content: Text("使用 findAncestorStateOfType 获取state"),
                 ));

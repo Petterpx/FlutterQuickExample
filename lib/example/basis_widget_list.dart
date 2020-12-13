@@ -1,3 +1,4 @@
+import 'package:cloud_flutter_app/example/basis_widgets/button_widget.dart';
 import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class _BasisWidgetListState extends State<BasisWidgetList> {
         body: ListView(
           children: <Widget>[
             showSampleStateFulWidget(context, "文本及其样式", TextWidget()),
-            showSampleStateFulWidget(context, "按钮", widget),
+            showSampleStateFulWidget(context, "按钮", ButtonWidget()),
             showSampleStateFulWidget(context, "图片和Icon", widget),
             showSampleStateFulWidget(context, "复选框及单选框", widget),
             showSampleStateFulWidget(context, "输入框和表单", widget),

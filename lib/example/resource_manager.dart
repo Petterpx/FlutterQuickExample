@@ -20,12 +20,12 @@ class _ResourceManager extends State {
           child: Column(
             children: <Widget>[
               WidgetFastButton("读取一个张图", () {
-                imageAssetKey.currentState.updateImage("images/icon.png");
+                imageAssetKey.currentState?.updateImage("images/icon.png");
               }),
               ImageWidget(imageAssetKey),
               WidgetFastButton("加载一段文本", () async {
                 var textAsset = await rootBundle.loadString("data/test.json");
-                textAssetKey.currentState.updateTitle(textAsset);
+                textAssetKey.currentState?.updateTitle(textAsset);
               }),
               TextWidget(textAssetKey)
             ],
@@ -44,7 +44,7 @@ class ImageWidget extends StatefulWidget {
 }
 
 class ImageWidgetState extends State {
-  String image;
+   String? image;
 
   updateImage(String image) {
     setState(() {
@@ -55,7 +55,7 @@ class ImageWidgetState extends State {
   @override
   Widget build(BuildContext context) {
     if (image == null) return Container(height: 0.0, width: 0.0);
-    return Image(width: 200, height: 200, image: AssetImage(image));
+    return Image(width: 200, height: 200, image: AssetImage(image!));
     // return Image.asset(image);
   }
 }
@@ -70,7 +70,7 @@ class TextWidget extends StatefulWidget {
 }
 
 class TextWidgetState extends State {
-  String title;
+  String? title;
 
   updateTitle(String title) {
     setState(() {
@@ -81,6 +81,6 @@ class TextWidgetState extends State {
   @override
   Widget build(BuildContext context) {
     if (title == null) return Container(height: 0.0, width: 0.0);
-    return Text(title);
+    return Text(title!);
   }
 }

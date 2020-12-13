@@ -21,7 +21,7 @@ class _MyScaleChildView extends State<MyScaleView>
   //动画控制器
   //AnimationController是一个特殊的Animation对象，在屏幕刷新的每一帧，就会生成一个新的值，
   // 默认情况下，AnimationController在给定的时间段内会线性的生成从0.0到1.0的数字
-  AnimationController controller;
+  late AnimationController controller;
 
   //第一次插入到树时
   @override

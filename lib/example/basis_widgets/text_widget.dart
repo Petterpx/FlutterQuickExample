@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class TextWidget extends StatelessWidget {
   TextStyle textStyle = const TextStyle(fontFamily: 'FangSong');
 
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
           child: Column(
+        // TODO: 2020/12/13 这里的主轴对齐是指
+        // TODO: 2020/12/13 对于整个Widget而言，依照最大widget所占宽度衡量，即可以理解为，如果某个Widget占满横屏，则对于其他widget而言，将全部默认居中
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
