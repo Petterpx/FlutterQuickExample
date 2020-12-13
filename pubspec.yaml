@@ -48,6 +48,8 @@ flutter:
 
   assets:
     - images/icon.png
+    - images/icon.jpeg
+    - images/klj.jpeg
     - images/jenkins.jpg
     - data/test.json
 

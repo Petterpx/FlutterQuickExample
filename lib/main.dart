@@ -1,5 +1,5 @@
+// @dart=2.9
 import 'dart:async';
-
 import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,6 @@ import 'example/navigator.dart';
 import 'example/resource_manager.dart';
 import 'example/status_manager.dart';
 import 'example/wiget_lifecycle.dart';
-
 void main() {
     runApp(MaterialApp(
       title: "Flutter-Example-Demo",
