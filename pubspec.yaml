@@ -23,13 +23,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   dio: ^3.0.10
   fluttertoast: ^7.1.1
   simple_logger: ^1.7.0
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
+
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,10 @@ flutter:
         - asset: fonts/FangSong.ttf
           #表示字体的轮廓为 italic,对应FontStyle
           style: italic
+    - family: AliIcon
+      fonts:
+        - asset: fonts/iconfont.ttf
+
 
 # To add custom fonts to your application, add a fonts section here,
 # in this "flutter" section. Each entry in this list should have a
