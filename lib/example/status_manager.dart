@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 ///  状态管理示例
 ///  */
-class StatusManager extends StatefulWidget {
+  class StatusManager extends StatefulWidget {
   @override
   _StatusManagerState createState() => _StatusManagerState();
 }

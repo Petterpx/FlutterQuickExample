@@ -10,7 +10,7 @@ import 'example/my_count.dart';
 import 'example/navigator.dart';
 import 'example/resource_manager.dart';
 import 'example/status_manager.dart';
-import 'example/wiget_lifecycle.dart';
+import 'example/wiget_state_lifecycle.dart';
 void main() {
     runApp(MaterialApp(
       title: "Flutter-Example-Demo",
@@ -35,7 +35,7 @@ class _ListViewState extends State {
         shrinkWrap: true,
         children: <Widget>[
           showButtonToPush(context, "计数器", MyCounterHomePage()),
-          showButtonToPush(context, "导航器", NavigatorDemo()),
+          showButtonToPush(context, "导航器", NavigatorToDemoWidget()),
           showButtonToPush(context, "动画", AnimateApp()),
           showButtonToPush(context, "Tab导航", TabNavigator()),
           showButtonToPush(context, "资源管理", ResourceManager()),

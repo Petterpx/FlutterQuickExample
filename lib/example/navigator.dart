@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // TODO: 2020/10/26 路由导航相关-demo
-class NavigatorDemo extends StatefulWidget {
+class NavigatorToDemoWidget extends StatefulWidget {
   @override
   _naivgateDemo createState() => _naivgateDemo();
 }

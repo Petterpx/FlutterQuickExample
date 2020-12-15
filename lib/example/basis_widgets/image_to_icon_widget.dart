@@ -1,7 +1,6 @@
 import 'package:cloud_flutter_app/example/basis_widgets/title_widget.dart';
 import 'package:cloud_flutter_app/utils/widget_image_to_right.dart';
 import 'package:cloud_flutter_app/utils/widget_text_to_box.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ImageIconWidget extends StatelessWidget {
