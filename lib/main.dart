@@ -1,5 +1,6 @@
 // @dart=2.9
 import 'dart:async';
+import 'package:cloud_flutter_app/example/layout_widgets.dart';
 import 'package:cloud_flutter_app/test/test_form_widget.dart';
 import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -44,6 +45,7 @@ class _ListViewState extends State {
           showButtonToPush(context, "State生命周期", StateLifecycleWidget()),
           showButtonToPush(context, "状态管理", StatusManager()),
           showButtonToPush(context, "常见Widget", BasisWidgetList()),
+          showButtonToPush(context, "布局类组件", LayoutWidgetsList()),
         ],
       ));
 
