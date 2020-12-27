@@ -1,9 +1,8 @@
-import 'package:cloud_flutter_app/example/basis_widgets/button_widget.dart';
 import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// 输入框及表单 */
+/// 输入框 */
 class TextFieldToFromWidget extends StatefulWidget {
   @override
   _TextFieldToFromWidgetState createState() => _TextFieldToFromWidgetState();
@@ -59,8 +58,8 @@ class _TextFieldToFromWidgetState extends State<TextFieldToFromWidget> {
   @override
   Widget build(BuildContext context) => Theme(
       data: Theme.of(context).copyWith(
-          hintColor: Colors.yellow, inputDecorationTheme: InputDecorationTheme(
-      )),
+          hintColor: Colors.lightGreen,
+          inputDecorationTheme: InputDecorationTheme()),
       child: Column(
         children: [
           TextField(
@@ -93,6 +92,17 @@ class _TextFieldToFromWidgetState extends State<TextFieldToFromWidget> {
                 labelText: "我是测试2",
                 hintText: "我是第二个测试",
                 prefixIcon: Icon(Icons.access_time)),
+          ),
+          Container(
+            child: TextField(
+              decoration: InputDecoration(
+                  labelText: "测试3",
+                  hintText: "我是要隐藏下划线的TextField",
+                  border: InputBorder.none),
+            ),
+            decoration: BoxDecoration(
+                border:
+                    Border(bottom: BorderSide(color: Colors.grey, width: 1))),
           ),
           RaisedButton(
             // TODO: 2020/12/17 移动焦点
