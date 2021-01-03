@@ -1,4 +1,4 @@
-# Flutter_Example_Demo
+# FlutterQuickExample
 
 
 
@@ -6,7 +6,7 @@
 
 
 
-这是一份Flutter学习示例，希望对你有所帮助。
+这是一份Flutter快速入门示例，关于你想知道的,都在这里。
 
 ## 入门示例
 - [一个简易的计数器](https://github.com/Petterpx/Flutter-Example-Demo/blob/master/lib/example/my_count.dart)
