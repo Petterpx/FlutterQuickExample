@@ -3,8 +3,9 @@ import 'package:cloud_flutter_app/utils/widget_text_to_box.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// Row -> 横向LayoutWidget */
-class RowWidget extends StatelessWidget {
+/// Row与Column*/
+/// // TODO: 2020/12/27 注意，如果子Widget超出屏幕范围，就会报溢出错误
+class RowToColumnWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
         children: [
