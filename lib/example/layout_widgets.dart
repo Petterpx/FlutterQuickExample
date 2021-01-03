@@ -1,4 +1,5 @@
 import 'package:cloud_flutter_app/example/layout_widgets/row_to_column_widget.dart';
+import 'package:cloud_flutter_app/example/layout_widgets/stack_to_positioned_widget.dart';
 import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,8 @@ class LayoutWidgetsList extends StatelessWidget {
           children: [
             showSampleStateFulWidget(context, "线性布局Row,Column", RowToColumnWidget()),
             showSampleStateFulWidget(context, "弹性布局Expand", FlexWidget()),
-            showSampleStateFulWidget(context, "流式布局 wrap,flow", WrapToFlowWidget())
+            showSampleStateFulWidget(context, "流式布局 wrap,flow", WrapToFlowWidget()),
+            showSampleStateFulWidget(context, "层叠布局 Stack,Positioned", StackToPositionedWidget())
           ],
         ),
       );
