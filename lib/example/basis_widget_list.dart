@@ -14,14 +14,9 @@ import 'basis_widgets/text_widget.dart';
 ///
 /// 基础组件list
 /// */
-class BasisWidgetList extends StatefulWidget {
+class BasisWidgetList extends StatelessWidget {
   @override
-  _BasisWidgetListState createState() => _BasisWidgetListState();
-}
-
-class _BasisWidgetListState extends State<BasisWidgetList> {
-  @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(context) => Scaffold(
         appBar: AppBar(
           title: Text("基础组件"),
         ),
@@ -33,7 +28,8 @@ class _BasisWidgetListState extends State<BasisWidgetList> {
             showSampleStateFulWidget(context, "复选框及单选框", CheBoxWidget()),
             showSampleStateFulWidget(context, "输入框", TextFieldToFromWidget()),
             showSampleStateFulWidget(context, "表单", FromWidget()),
-            showSampleStateFulWidget(context, "表单测试-测试Builder", TestFromWidget()),
+            showSampleStateFulWidget(
+                context, "表单测试-测试Builder", TestFromWidget()),
             showSampleStateFulWidget(context, "进度指示器", ProgressWidget()),
           ],
         ),

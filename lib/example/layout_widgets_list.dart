@@ -8,6 +8,9 @@ import 'layout_widgets/align_widget.dart';
 import 'layout_widgets/flex_widget.dart';
 import 'layout_widgets/wrap_to_flow_widget.dart';
 
+///
+///  布局类组件Widget
+///  */
 class LayoutWidgetsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
