@@ -1,5 +1,5 @@
 import 'package:cloud_flutter_app/utils/util_view.dart';
-import 'package:flutter/cupertino.dart';
+ 
 import 'package:flutter/material.dart';
 
 class TestFromWidget extends StatelessWidget {
@@ -12,7 +12,7 @@ class TestFromWidget extends StatelessWidget {
           validator: (v) => v!.trim().length > 0 ? null : "不能为null",
         ),
         Builder(
-            builder: (context) => RaisedButton(
+            builder: (context) => ElevatedButton(
                 child: Text("测试From.of(context)"),
                 onPressed: () {
                   if (Form.of(context)!.validate()) {

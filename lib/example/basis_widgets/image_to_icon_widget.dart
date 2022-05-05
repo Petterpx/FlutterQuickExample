@@ -78,10 +78,7 @@ class ImageIconWidget extends StatelessWidget {
                         fontSize: 40,
                         color: Colors.red),
                   )),
-              TitleWidget(
-                  title: "使用自定义字体图标",
-                  widget: Icon(AliIcons.cat)
-              )
+              TitleWidget(title: "使用自定义字体图标", widget: Icon(AliIcons.cat))
             ],
           ),
         ),

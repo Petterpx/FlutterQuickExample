@@ -1,6 +1,6 @@
 import 'package:cloud_flutter_app/example/basis_widgets/title_widget.dart';
 import 'package:cloud_flutter_app/utils/widget_text_to_box.dart';
-import 'package:flutter/cupertino.dart';
+ 
 import 'package:flutter/material.dart';
 
 /// Row与Column*/
@@ -27,7 +27,7 @@ class RowToColumnWidget extends StatelessWidget {
                   SizedBox(
                     height: 200,
                     width: 100,
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       onPressed: () {},
                       child: Text("123"),
                     ),
@@ -35,7 +35,10 @@ class RowToColumnWidget extends StatelessWidget {
                   Text("测试方向居中")
                 ],
               )),
-          TextToBoxWidget(title: "Column",fontSize: 30.0,),
+          TextToBoxWidget(
+            title: "Column",
+            fontSize: 30.0,
+          ),
           // TODO: 2020/12/27 在Column嵌套的情况下，内部Column尽管是max,但也无法充满屏幕，这个时候就可以使用Expand
           Expanded(
             child: Container(
@@ -44,7 +47,7 @@ class RowToColumnWidget extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   SizedBox(
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       onPressed: () {},
                       child: Text("子Widget占满"),
                     ),

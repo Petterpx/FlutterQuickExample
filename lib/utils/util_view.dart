@@ -1,5 +1,3 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -12,7 +10,7 @@ showToast(String message) => Fluttertoast.showToast(
     msg: message, gravity: ToastGravity.CENTER, fontSize: 16.0);
 
 /// 显示一个button */
-showButton(String title, VoidCallback callback) => RaisedButton(
+showButton(String title, VoidCallback callback) => ElevatedButton(
       onPressed: callback,
       child: Text(title),
     );
@@ -52,7 +50,7 @@ class _WidgetFastButtonState extends State {
 
   @override
   Widget build(BuildContext context) =>
-      RaisedButton(onPressed: callback, child: Text(title));
+      ElevatedButton(onPressed: callback, child: Text(title));
 }
 
 /// 显示一个快捷ListWidget跳转 */

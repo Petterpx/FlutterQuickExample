@@ -5,7 +5,6 @@ import 'package:cloud_flutter_app/example/basis_widgets/progress_widget.dart';
 import 'package:cloud_flutter_app/example/basis_widgets/textfield_widget.dart';
 import 'package:cloud_flutter_app/test/test_form_widget.dart';
 import 'package:cloud_flutter_app/utils/util_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'basis_widgets/chebox_widget.dart';

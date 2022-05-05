@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 /// 组合Button，即button增加title注释 */
 // ignore: must_be_immutable
 class ButtonToTitleWidget extends StatelessWidget {
- late String title;
- late Widget childWidget;
+  late String title;
+  late Widget childWidget;
 
   ButtonToTitleWidget({required String title, required Widget widget}) {
     this.title = title;

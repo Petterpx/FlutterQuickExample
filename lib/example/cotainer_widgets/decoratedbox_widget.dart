@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 ///
@@ -20,9 +19,7 @@ class DecoratedBoxWidget extends StatelessWidget {
             //阴影
             boxShadow: [
               BoxShadow(
-                  color: Colors.blue,
-                  offset: Offset(2.0, 2.0),
-                  blurRadius: 4.0)
+                  color: Colors.blue, offset: Offset(2.0, 2.0), blurRadius: 4.0)
             ],
             //形状，当circle时，和borderRadius不能共存
             shape: BoxShape.rectangle),

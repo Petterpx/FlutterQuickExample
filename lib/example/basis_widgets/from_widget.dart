@@ -1,5 +1,4 @@
 import 'package:cloud_flutter_app/utils/util_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// 表单 */
@@ -31,7 +30,7 @@ class FromWidget extends StatelessWidget {
                       },
                     ),
                     Builder(
-                        builder: (context) => RaisedButton(
+                        builder: (context) => ElevatedButton(
                             child: Text("登录1->控制"),
                             onPressed: () {
                               // TODO: 2020/12/20 方式1
@@ -73,12 +72,9 @@ class FromWidget extends StatelessWidget {
                     return v!.trim().length > 3 ? null : "长度大于3";
                   },
                 ),
-                RaisedButton(onPressed: () {
-                  Form.of(context)?.validate();
-                }),
                 // TODO: 2020/12/20 Form.of 测试
                 Builder(
-                    builder: (context) => RaisedButton(
+                    builder: (context) => ElevatedButton(
                         child: Text("测试From.of(context)"),
                         onPressed: () {
                           // TODO: 2020/12/20 这里点击只会响应当前最近的context所匹配的 FormState
@@ -86,7 +82,6 @@ class FromWidget extends StatelessWidget {
                             showToast("验证通过");
                           }
                         })),
-                TestBtnWidget()
               ])),
         ],
       );
@@ -94,7 +89,7 @@ class FromWidget extends StatelessWidget {
 
 class TestBtnWidget extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => RaisedButton(
+  Widget build(BuildContext context) => ElevatedButton(
       child: Text("测试From.of(context)"),
       onPressed: () {
         if (Form.of(context)!.validate()) {

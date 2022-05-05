@@ -1,10 +1,7 @@
 import 'dart:async';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
-import 'dart:ui';
-
 import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
+ 
 
 // TODO: 2020/10/26 异常示例
 /// 初始化全局异常
@@ -46,12 +43,8 @@ _runZonedError() {
 
 void test() {
   runZoned(() {
-
-    runZoned(() {},onError: (e){
-
-    });
-
-  },onError: (e){
+    runZoned(() {}, onError: (e) {});
+  }, onError: (e) {
     print('');
   });
 }

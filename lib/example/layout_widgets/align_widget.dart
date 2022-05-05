@@ -1,5 +1,5 @@
 // TODO: 1/3/21 用于更简便的调整一个子元素在父元素中的位置
-import 'package:flutter/cupertino.dart';
+ 
 import 'package:flutter/material.dart';
 
 class AlignWidget extends StatelessWidget {
@@ -10,7 +10,7 @@ class AlignWidget extends StatelessWidget {
             color: Colors.blueGrey,
             child: Align(
                 //用于确定 Align 组件本身宽高的属性，为两个缩放因子，会分别乘以子元素的宽/高 ，最终结果就是 Align 组件的宽高
-              // TODO: 1/3/21 注意：如果值为null,则组件的宽高将会占用尽可能多的空间。
+                // TODO: 1/3/21 注意：如果值为null,则组件的宽高将会占用尽可能多的空间。
                 widthFactor: 2,
                 heightFactor: 2,
                 //表示子组件在父组件中的起始位置

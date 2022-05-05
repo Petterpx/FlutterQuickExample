@@ -1,5 +1,4 @@
 import 'package:cloud_flutter_app/utils/util_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// 输入框 */
@@ -13,7 +12,6 @@ class _TextFieldToFromWidgetState extends State<TextFieldToFromWidget> {
 
   FocusNode focusNode1 = FocusNode();
   FocusNode focusNode2 = FocusNode();
-  FocusScopeNode? _focusScopeNode;
 
   /// 监听焦点改变 */
   listenerFocus() {
@@ -104,17 +102,17 @@ class _TextFieldToFromWidgetState extends State<TextFieldToFromWidget> {
                 border:
                     Border(bottom: BorderSide(color: Colors.grey, width: 1))),
           ),
-          RaisedButton(
+          ElevatedButton(
             // TODO: 2020/12/17 移动焦点
             onPressed: mobileFocus,
             child: Text("移动焦点"),
           ),
-          RaisedButton(
+          ElevatedButton(
             // TODO: 2020/12/17 移除焦点
             onPressed: clearFocus,
             child: Text("移除焦点"),
           ),
-          RaisedButton(
+          ElevatedButton(
             // TODO: 2020/12/17 移除焦点
             onPressed: listenerFocus,
             child: Text("输入框1是否依然存在焦点"),

@@ -1,5 +1,5 @@
 import 'package:cloud_flutter_app/utils/util_view.dart';
-import 'package:flutter/cupertino.dart';
+ 
 import 'package:flutter/material.dart';
 
 ///
@@ -16,6 +16,7 @@ class _StateLifecycleWidgetState extends State<StateLifecycleWidget> {
 
   @override
   void initState() {
+    super.initState();
     FlutterError.onError = (details) {
       logInfo("收集异常----${details.exceptionAsString()}");
       showToast(
@@ -87,6 +88,7 @@ class ChildState extends State {
 
   @override
   void initState() {
+    super.initState();
     logInfo("initState----我初始化了");
   }
 
@@ -149,16 +151,16 @@ class FindAncestorScaffoldState extends State {
             children: <Widget>[
               WidgetFastButton("findAncestorStateOfType", () {
                 //查找父级最近的 Scaffold  对应的ScaffoldState对象。
-                ScaffoldState _state =
-                    context.findAncestorStateOfType<ScaffoldState>()!;
+                ScaffoldMessengerState _state =
+                    context.findAncestorStateOfType<ScaffoldMessengerState>()!;
                 _state.showSnackBar(SnackBar(
                   content: Text("使用 findAncestorStateOfType 获取state"),
                 ));
               }),
               WidgetFastButton("of静态方法", () {
-                ScaffoldState _state = Scaffold.of(context);
+                ScaffoldMessengerState _state = ScaffoldMessenger.of(context);
                 _state.showSnackBar(SnackBar(
-                  content: Text("使用Scaffold.of(context)获取state"),
+                  content: Text("使用ScaffoldMessenger.of(context)获取state"),
                 ));
               })
             ],

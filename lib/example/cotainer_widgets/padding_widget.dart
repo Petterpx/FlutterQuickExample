@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 ///
@@ -6,8 +5,7 @@ import 'package:flutter/material.dart';
 /// */
 class PaddingWidget extends StatelessWidget {
   @override
-  Widget build(BuildContext context) =>
-      Container(
+  Widget build(BuildContext context) => Container(
         constraints: BoxConstraints.expand(),
         color: Colors.white70,
         child: Padding(
@@ -23,7 +21,7 @@ class PaddingWidget extends StatelessWidget {
               ),
               Padding(
                 //左边添加8像素，上边添加20像素
-                padding: EdgeInsets.only(left: 8.0,top: 20),
+                padding: EdgeInsets.only(left: 8.0, top: 20),
                 child: Text("Flutter UI"),
               ),
               Padding(
@@ -36,7 +34,7 @@ class PaddingWidget extends StatelessWidget {
                 child: Text("only-具体某个方向填充"),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(40,40,40,40),
+                padding: EdgeInsets.fromLTRB(40, 40, 40, 40),
                 child: Text("fromLTRB-指定四个方向"),
               ),
             ],

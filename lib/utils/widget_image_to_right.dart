@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+ 
 import 'package:flutter/material.dart';
 
 /// 图片右边带提示的ImageWidget */
@@ -10,11 +10,12 @@ class ImageTitleWidget extends StatelessWidget {
   double _width = 100.0;
   double _height = 100.0;
 
-  ImageTitleWidget({Key? key,
-    required BoxFit fit,
-    width = 150.0,
-    height = 100.0,
-    String localPath = "images/klj.jpeg"})
+  ImageTitleWidget(
+      {Key? key,
+      required BoxFit fit,
+      width = 150.0,
+      height = 100.0,
+      String localPath = "images/klj.jpeg"})
       : super(key: key) {
     this.localPath = localPath;
     this.title = fit.toString();
@@ -24,8 +25,7 @@ class ImageTitleWidget extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) =>
-      Column(
+  Widget build(BuildContext context) => Column(
         children: <Widget>[
           SizedBox(
             height: 10,
