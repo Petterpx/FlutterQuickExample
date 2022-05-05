@@ -4,6 +4,7 @@ import 'package:cloud_flutter_app/example/cotainer_widgets/padding_widget.dart';
 import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/material.dart';
 
+import 'cotainer_widgets/container_widget.dart';
 import 'cotainer_widgets/transform_widget.dart';
 
 ///
@@ -20,7 +21,8 @@ class ContainerWidgetsList extends StatelessWidget {
                 context, "ConstrainedBox", ConstrainedBoxWidget()),
             showSampleStateFulWidget(
                 context, "DecoratedBox", DecoratedBoxWidget()),
-            showSampleStateFulWidget(context, "Transform", TransformWidget())
+            showSampleStateFulWidget(context, "Transform", TransformWidget()),
+            showSampleStateFulWidget(context, "Container", ContainerWidget())
           ],
         ),
       );
