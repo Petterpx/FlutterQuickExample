@@ -15,16 +15,16 @@ showButton(String title, VoidCallback callback) => ElevatedButton(
       child: Text(title),
     );
 
-/// 显示 */
+/// 显示一个Button并且跳转到指定widget */
 showButtonToPush(BuildContext context, String title, Widget widget) =>
-    GestureDetector(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return widget;
-        }));
-      },
-      child: Container(
-        padding: const EdgeInsets.all(8.0),
+    Container(
+      padding: EdgeInsets.only(left: 10, right: 10),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return widget;
+          }));
+        },
         child: Text(title,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
       ),
