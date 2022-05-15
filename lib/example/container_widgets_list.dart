@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'cotainer_widgets/clip_widget.dart';
 import 'cotainer_widgets/container_widget.dart';
+import 'cotainer_widgets/fittedbox_widget.dart';
 import 'cotainer_widgets/transform_widget.dart';
 
 ///
@@ -24,7 +25,8 @@ class ContainerWidgetsList extends StatelessWidget {
                 context, "DecoratedBox", DecoratedBoxWidget()),
             showSampleStateFulWidget(context, "Transform", TransformWidget()),
             showSampleStateFulWidget(context, "Container", ContainerWidget()),
-            showSampleStateFulWidget(context, "Clip_Widget", ClipWidget())
+            showSampleStateFulWidget(context, "Clip_Widget", ClipWidget()),
+            showSampleStateFulWidget(context, "Fitted_Box_Widget", FittedBoxWidget())
           ],
         ),
       );
