@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'cotainer_widgets/clip_widget.dart';
 import 'cotainer_widgets/container_widget.dart';
 import 'cotainer_widgets/fittedbox_widget.dart';
+import 'cotainer_widgets/scafoold_widget.dart';
 import 'cotainer_widgets/transform_widget.dart';
 
 ///
@@ -26,7 +27,8 @@ class ContainerWidgetsList extends StatelessWidget {
             showSampleStateFulWidget(context, "Transform", TransformWidget()),
             showSampleStateFulWidget(context, "Container", ContainerWidget()),
             showSampleStateFulWidget(context, "Clip_Widget", ClipWidget()),
-            showSampleStateFulWidget(context, "Fitted_Box_Widget", FittedBoxWidget())
+            showSampleStateFulWidget(context, "Fitted_Box_Widget", FittedBoxWidget()),
+            showSampleStateFulWidget(context, "Scaffold_Widget", ScaffoldRoute())
           ],
         ),
       );

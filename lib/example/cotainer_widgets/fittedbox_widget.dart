@@ -30,6 +30,11 @@ class FittedBoxWidget extends StatelessWidget {
               ),
             ),
             Text("使用FittedBox"),
+            UnconstrainedBox(child: Container(
+                width: 100,
+                height: 100,
+                child:Text("按照当前组件高度适配按照当前组件高度适配按照当前组件高度适配按照当前组件高度适配")
+            ),),
             FittedBox(
               child: simpleSingleWidget(),
             ),
