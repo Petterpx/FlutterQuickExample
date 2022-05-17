@@ -21,8 +21,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
       appBar: AppBar(
         title: Text("App Name"),
         leading: Builder(
-            builder: ((context) =>
-                IconButton(
+            builder: ((context) => IconButton(
                   icon: Icon(
                     Icons.dashboard,
                     color: Colors.white,
@@ -100,30 +99,29 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
     showToast("点击了add");
   }
 
-  Widget MyColumn() =>
-      Drawer(
+  Widget MyColumn() => Drawer(
           child: MediaQuery.removePadding(
-            context: context,
-            // 移除抽屉菜单顶部默认留白
-            removeTop: true,
-            child: Align(
-                alignment: Alignment.topLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
-                      child: ClipOval(
-                          child: Image.asset(
-                            "images/icon.png",
-                            width: 80,
-                          )),
-                    ),
-                    Text(
-                      "Petterp",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )
-                  ],
-                )),
-          ));
+        context: context,
+        // 移除抽屉菜单顶部默认留白
+        removeTop: true,
+        child: Align(
+            alignment: Alignment.topLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 30.0),
+                  child: ClipOval(
+                      child: Image.asset(
+                    "images/icon.png",
+                    width: 80,
+                  )),
+                ),
+                Text(
+                  "Petterp",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            )),
+      ));
 }
