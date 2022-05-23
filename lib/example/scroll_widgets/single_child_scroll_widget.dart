@@ -11,6 +11,7 @@ class SingleChildScrollWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String str = "ABCDDASDASDasdanksdasdasdasdasdASDASD";
+    // 使用Scrollbar 包裹，可以增加进度条
     return Scrollbar(
         child: SingleChildScrollView(
             //表示使用widget中默认的PrimaryScrollController

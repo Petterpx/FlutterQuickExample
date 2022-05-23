@@ -57,6 +57,7 @@ class _WidgetFastButtonState extends State {
 showSampleStateFulWidget(BuildContext context, String title, Widget widget) =>
     showButtonToPush(context, title, SampleStateFulWidget(widget, title));
 
+
 /// 快捷Widget */
 // ignore: must_be_immutable
 class SampleStateFulWidget extends StatefulWidget {
