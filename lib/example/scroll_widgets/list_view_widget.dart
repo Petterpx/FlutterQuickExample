@@ -2,6 +2,8 @@ import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'list_view_load_simple.dart';
+
 class ListViewWidget extends StatelessWidget {
   const ListViewWidget({Key? key}) : super(key: key);
 
@@ -13,6 +15,8 @@ class ListViewWidget extends StatelessWidget {
             showButtonToPush(
                 context, "ListView.Builder", simpleListViewBuilder()),
             showButtonToPush(context, "ListView.separated", simpleSeparated()),
+            showButtonToPush(context, "固定高度的listView", simpleFixedExtentList()),
+            showButtonToPush(context, "无限加载列表的listView", ListLoadWidget()),
           ],
         ),
       );
@@ -60,4 +64,16 @@ class ListViewWidget extends StatelessWidget {
           },
           itemCount: 100),
       "ListView.Builder");
+
+  /// 固定item高度的列表
+  /// 当知道列表项的高度时，指定itemExtent或 prototypeItem 会有更高的性能,二者二选一
+  /// */
+  Widget simpleFixedExtentList() => SampleStateFulWidget(
+      ListView.builder(
+          itemExtent: 100,
+          itemCount: 20,
+          itemBuilder: (context, index) {
+            return Text("position----" + index.toString());
+          }),
+      "固定高度列表的ListView");
 }
