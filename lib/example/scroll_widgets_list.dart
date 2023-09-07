@@ -1,4 +1,6 @@
+import 'package:cloud_flutter_app/example/scroll_widgets/animated_list_simple.dart';
 import 'package:cloud_flutter_app/example/scroll_widgets/list_view_widget.dart';
+import 'package:cloud_flutter_app/example/scroll_widgets/scroll_controller_simple.dart';
 import 'package:cloud_flutter_app/example/scroll_widgets/single_child_scroll_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +31,11 @@ class ScrollWidgetsList extends StatelessWidget {
           children: [
             showSampleStateFulWidget(
                 context, "SingleChildScroll", SingleChildScrollWidget()),
+            showSampleStateFulWidget(context, "ListView", ListViewWidget()),
             showSampleStateFulWidget(
-                context, "ListView", ListViewWidget())
+                context, "滚动监听及控制", ScrollControllerWidgetSimple()),
+            showSampleStateFulWidget(
+                context, "AnimatedList", AnimatedListRoute())
           ],
         ),
       );
