@@ -10,16 +10,11 @@ class TitleWidget extends StatelessWidget {
 
   TitleWidget(
       {Key? key,
-      required String title,
-      required Widget widget,
-      sizeBox = 30.0,
-      double fontSize = 16.0})
-      : super(key: key) {
-    this.sizeBox = sizeBox;
-    this.title = title;
-    this.widget = widget;
-    this.fontSize = fontSize;
-  }
+      required this.title,
+      required this.widget,
+      this.sizeBox = 30.0,
+      this.fontSize = 16.0})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => Column(

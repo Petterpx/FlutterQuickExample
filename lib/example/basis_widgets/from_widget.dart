@@ -44,7 +44,7 @@ class FromWidget extends StatelessWidget {
 
                               //为什么包装一层Builder控件之后,Form.of正常了？因为你直接传递的context是根context啊
                               // 如果将它传递给Form.of(),内部由父部件开始向上查找，因为传递的是根，肯定找不到啊，所以肯定null啊
-                              if (Form.of(context)!.validate()) {
+                              if (Form.of(context).validate()) {
                                 showToast("验证通过");
                               }
                             })),

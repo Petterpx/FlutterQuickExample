@@ -1,6 +1,7 @@
 import 'package:cloud_flutter_app/example/container_widgets_list.dart';
 import 'package:cloud_flutter_app/example/layout_widgets_list.dart';
 import 'package:cloud_flutter_app/example/scroll_widgets_list.dart';
+import 'package:cloud_flutter_app/idea/idea_page_widget.dart';
 import 'package:cloud_flutter_app/utils/util_view.dart';
 import 'package:flutter/material.dart';
 import 'actual/tab_navigator.dart';
@@ -46,6 +47,7 @@ class _ListViewState extends State {
           showButtonToPush(context, "布局类组件", LayoutWidgetsList()),
           showButtonToPush(context, "容器类组件", ContainerWidgetsList()),
           showButtonToPush(context, "可滚动类组件", ScrollWidgetsList()),
+          showButtonToPush(context, "一些有意思的idea", IdeaPageWidgetList()),
         ],
       ));
 

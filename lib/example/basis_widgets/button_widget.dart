@@ -76,7 +76,14 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                 ),
                 clipBehavior: Clip.antiAlias,
                 onPressed: _pressed("一个自定义按钮样式"),
-              )
+              ),
+              OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.red, width: 2),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0))),
+                  onPressed: () {},
+                  child: Text("123123123")),
             ],
           ),
         ),

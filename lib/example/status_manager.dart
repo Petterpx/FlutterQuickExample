@@ -88,7 +88,7 @@ class _WidgetAtoBState extends State<WidgetAtoB> {
 }
 
 class WidgetB extends StatelessWidget {
-  WidgetB({this.active: false, required this.onChanged});
+  WidgetB({this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -146,7 +146,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 
 /// 子Widget控制外部边框显示状态 */
 class WidgetC extends StatefulWidget {
-  WidgetC({this.active: false, required this.onChanged});
+  WidgetC({this.active = false, required this.onChanged});
 
   final bool active;
   final Function onChanged;

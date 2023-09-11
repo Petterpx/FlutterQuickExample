@@ -30,25 +30,16 @@ class _AnimatedListRoute extends State<AnimatedListRoute> {
               initialItemCount: data.length,
               itemBuilder: (context, index, animation) {
                 // 添加列表项时会执行渐显动画
-                return FadeTransition(
-                    opacity: animation, child: buildItem(context, index));
+                return SizeTransition(
+                      sizeFactor: animation,
+                      axisAlignment: 0.0,
+                      child: buildItem(context, index),
+                    );
               }),
-          buildAddBtn()
+          buildAddBtn2(),
         ],
       );
 
-  Widget buildAddBtn() => Positioned(
-        child: FloatingActionButton(
-            child: Icon(Icons.add),
-            onPressed: () {
-              data.add('${++counter}');
-              globalKey.currentState!.insertItem(data.length - 1);
-              print('添加 $counter');
-            }),
-        bottom: 30,
-        left: 0,
-        right: 0,
-      );
 
   Widget buildItem(context, index) {
     String char = data[index];
@@ -60,5 +51,54 @@ class _AnimatedListRoute extends State<AnimatedListRoute> {
             icon: Icon(Icons.delete)));
   }
 
-  void onDelete(context, index) {}
+  Widget buildAddBtn() => Positioned(
+        child: FloatingActionButton(
+            child: Icon(Icons.add_alarm),
+            onPressed: () {
+              data.add('${++counter}');
+              globalKey.currentState!.insertItem(data.length - 1);
+              print('添加 $counter');
+            }),
+        bottom: 30,
+        left: 0,
+        right: 0,
+      );
+
+  Widget buildAddBtn2() => Positioned(
+        child: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {
+              data.insert(0, '${++counter}');
+              globalKey.currentState!.insertItem(0);
+              print('添加 $counter');
+            }),
+        bottom: 30,
+        left: 150,
+        right: 0,
+      );
+
+
+  void onDelete(context, index) {
+    data.remove(index);
+    globalKey.currentState!.removeItem(index, (context, animation) {
+      // 删除过程执行的是反向动画，animation.value 会从1变为0
+      var item = buildItem(context, index);
+      print('删除 ${data[index]}');
+      data.removeAt(index);
+      // 删除动画是一个合成动画：渐隐 + 收缩列表项
+      return FadeTransition(
+        opacity: CurvedAnimation(
+          parent: animation,
+          //让透明度变化的更快一些
+          curve: const Interval(0.5, 1.0),
+        ),
+        // 不断缩小列表项的高度
+        child: SizeTransition(
+          sizeFactor: animation,
+          axisAlignment: 0.0,
+          child: item,
+        ),
+      );
+    }, duration: Duration(milliseconds: 200));
+  }
 }
